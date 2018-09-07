@@ -27,7 +27,10 @@
 
 * 读状态
 
-SHARED_UNIT：维护读状态的整数，初始值的二进制000(前面共16个0)1000000000000000（后面15个0），
-代码中方法sharedCount(int c)
+每当一个线程获取读锁则在SHARED_UNIT加上state，
+SHARED_UNIT：维护读状态的整数，初始值的二进制000(前面共16个0)1000000000000000（后面15个0）
 
-	static int sharedCount(int c)    { return c >>> SHARED_SHIFT; }
+* 写状态
+
+写状态不可共享所以一般只会有同个线程多次进入，每次state+1
+
