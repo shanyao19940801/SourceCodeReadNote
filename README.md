@@ -11,9 +11,11 @@ util包下的源码
 
  [LinkedBlockingQueue](https://github.com/sqshanyao/SourceCodeStudy/blob/master/sourcecodestudy/java_code/src/jdk/util/concurrent/LinkedBlockingQueue.md)
 
-[同步器AbstractQueuedSynchronizer](https://github.com/sqshanyao/SourceCodeStudy/blob/master/sourcecodestudy/java_code/src/jdk/util/concurrent/lock/AbstractQueuedSynchronizer.md)
+[同步器：AbstractQueuedSynchronizer](https://github.com/sqshanyao/SourceCodeStudy/blob/master/sourcecodestudy/java_code/src/jdk/util/concurrent/lock/AbstractQueuedSynchronizer.md)
 
 [ReentrantLock](https://github.com/sqshanyao/SourceCodeStudy/blob/master/sourcecodestudy/java_code/src/jdk/util/concurrent/lock/ReentrantLock.md)
+
+[读写锁：ReentrantReadWriteLock](https://github.com/shanyao19940801/SourceCodeReadNote/blob/master/sourcecodestudy/file/ReentrantReadWriteLock.md)
 
 ### map
 
