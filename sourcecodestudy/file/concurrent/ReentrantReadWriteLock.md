@@ -14,21 +14,23 @@
 ### 读写状态
 源码中有一个state成员变量就是用来表示当前状态，高16位标示读，低16位标示写
 
+![图1](https://github.com/shanyao19940801/SourceCodeReadNote/blob/master/sourcecodestudy/file/image/ReentrantReadWriteLock01.JPG)
+
     private volatile int state;
 
 我们看到源码中有下面几个常量
 
         static final int SHARED_SHIFT   = 16;//32位的中间位
         static final int SHARED_UNIT    = (1 << SHARED_SHIFT);//写锁的移动单位，每当一个线程获取写锁state基础上加上这个值
-        static final int MAX_COUNT      = (1 << SHARED_SHIFT) - 1;
+        static final int MAX_COUNT      = (1 << SHARED_SHIFT) - 1;//最大重入锁次数
         static final int EXCLUSIVE_MASK = (1 << SHARED_SHIFT) - 1;
 
 
 
-* 读状态
+#### 读状态
 
-每当一个线程获取读锁则在SHARED_UNIT加上state，
-SHARED_UNIT：维护读状态的整数，初始值的二进制000(前面共16个0)1000000000000000（后面15个0）
+每当一个线程获取读锁则在SHARED_UNIT加上state，这就相当于在高16位上加一
+
 
 * 写状态
 
