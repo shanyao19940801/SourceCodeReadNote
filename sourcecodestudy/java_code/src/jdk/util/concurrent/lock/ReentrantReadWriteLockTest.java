@@ -6,6 +6,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantReadWriteLockTest {
+    static boolean update = false;
     static Map<String,String> map = new HashMap<>();
     static ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
     static ReentrantReadWriteLock rw1 = new ReentrantReadWriteLock();
@@ -48,5 +49,29 @@ public class ReentrantReadWriteLockTest {
         System.out.println(SHARED_UNIT);
         System.out.println(MAX_COUNT);
         System.out.println(EXCLUSIVE_MASK);
+    }
+
+    public static void processDate() {
+        r.lock();
+        try {
+            if (!update) {
+                //必须先释放读锁
+                r.unlock();
+                //锁降级从写锁获取到开始
+                w.lock();
+                try {
+                    if (!update) {
+                        update = true;
+                    }
+                    r.lock();
+                } finally {
+                    w.unlock();
+                }
+                //锁降级完成，锁降级为读锁
+
+            }
+        } finally {
+            r.unlock();
+        }
     }
 }

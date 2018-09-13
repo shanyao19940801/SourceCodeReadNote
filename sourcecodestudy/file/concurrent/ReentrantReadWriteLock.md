@@ -98,8 +98,10 @@
              *    and set owner.
              */
             Thread current = Thread.currentThread();
-			//获取当前锁状态
+			//获取当前锁状态，如果c不等于0说明当前有线程正在占用锁状态
             int c = getState();
+			//c与低16位全部是1的值进行与运算，根据c，w是否为0可以判断出当前锁的读写状态
+			//
             int w = exclusiveCount(c);
             if (c != 0) {
                 // (Note: if c != 0 and w == 0 then shared count != 0)
@@ -118,4 +120,8 @@
             return true;
         }
 
+
+### 锁降级
+
+顾名思义锁从写状态降级到读状态，注意如果线程持有写锁然后释放再持有读锁这种情况不算锁降级，只有当前持有写锁再获取读锁才能成为锁降级。
 
