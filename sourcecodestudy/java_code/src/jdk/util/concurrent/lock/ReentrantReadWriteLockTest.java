@@ -43,9 +43,10 @@ public class ReentrantReadWriteLockTest {
         r.lock();
     }
     public static void main(String[] args) {
+        processDate();
 //        testR();
-        testW();
-        getValue("1");
+/*        testW();
+        getValue("1");*/
         System.out.println(SHARED_UNIT);
         System.out.println(MAX_COUNT);
         System.out.println(EXCLUSIVE_MASK);
