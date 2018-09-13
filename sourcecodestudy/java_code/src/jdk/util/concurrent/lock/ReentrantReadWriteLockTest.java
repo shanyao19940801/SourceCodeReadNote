@@ -61,6 +61,7 @@ public class ReentrantReadWriteLockTest {
                 w.lock();
                 try {
                     if (!update) {
+                        //准备数据的流程
                         update = true;
                     }
                     r.lock();
