@@ -1,4 +1,4 @@
-package com.yao.sourcecode.jdk.list;
+package jdk.util.list;
 
 import org.junit.Test;
 

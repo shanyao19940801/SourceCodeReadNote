@@ -1,4 +1,4 @@
-package com.yao.sourcecode.jdk.concurrent.test;
+package jdk.util.concurrent.test;
 
 public class FinalTest {
 //    private static final long serialVersionUID = -817911632652898426L;

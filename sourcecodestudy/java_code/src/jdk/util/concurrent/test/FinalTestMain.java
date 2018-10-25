@@ -1,4 +1,4 @@
-package com.yao.sourcecode.jdk.concurrent.test;
+package jdk.util.concurrent.test;
 
 public class FinalTestMain {
     public static void main(String[] args) {
