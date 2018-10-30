@@ -1,4 +1,4 @@
-package com.yao.sourcecode.jdk.concurrent;
+package jdk.util.concurrent;
 
 import org.junit.Test;
 

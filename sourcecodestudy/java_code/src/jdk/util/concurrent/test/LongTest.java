@@ -8,6 +8,6 @@ public class LongTest {
         LongTest longTest = new LongTest();
         int a = 1;
         long b = 3L;
-        longTest.test(b,a);
+        longTest.test(b, a);
     }
 }
